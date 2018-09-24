@@ -8,12 +8,13 @@
 * [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のプッシュ通知機能は、Googleが提供しているFirebase Cloud Messaging（以下、FCM）と連携することで、通知の配信を行っています
 
 ※ FCMはGCM(Google Cloud Messaging)の新バージョンです。
-既にGCMにてプロジェクトの作成・GCMの有効化設定を終えている場合は、継続してご利用いただくことが可能です。
+既にFCMにてプロジェクトの作成・FCMの有効化設定を終えている場合は、継続してご利用いただくことが可能です。
 
 * Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
- * FCMプロジェクトの作成とAPIキーの取得
- * ニフクラ mobile backendでの設定
- * アプリでの設定
+   * FCMプロジェクトの作成
+   * google-service.jsonとFirebase秘密鍵の設定
+   * ニフクラ  mobile backendでの設定
+   * アプリでの設定
 * 詳しい設定内容は[プッシュ通知（Android）](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)をご参照ください
 
 ## ニフクラ mobile backendって何？？
@@ -26,7 +27,7 @@
 
 ## 動作環境
 * Windows 7 Professional
-* Android Studio v2.2.3
+* Android Studio v3.1
 * Android ver 4x,5x,6x,7x
 
 ※上記内容で動作確認をしています
@@ -36,11 +37,12 @@
 ## 手順
 ### 0.プッシュ通知機能を使うための準備
 
-ニフクラ mobile backendと連携させるためのAPIキーを取得する必要があります。 以下のドキュメントを参考に、FCMプロジェクトの作成とAPIキーの取得を行ってください。
+FCM対応したプッシュ通知を送信する場合、google-service.jsonをアプリに配置してただくのと、Firebaseの秘密鍵をmobile backendにアップロードしていただく必要があります。
+以下のドキュメントを参考に、google-service.jsonとFirebase秘密鍵の設定を行ってください。
 
-__▼ mobile backendとFCMの連携に必要な設定 ▼__<br>https://mbaas.nifcloud.com/doc/current/tutorial/push_setup_android.html
+__▼ google-service.jsonとFirebase秘密鍵の設定方法について ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html
 
-### 1. ニフクラ mobile backend の準備
+### 1. ニフクラ  mobile backend の準備
 
 * 上記リンクから会員登録（無料）をします
 * 登録後、ログインをすると下図のように「アプリの新規作成」画面が出ますので、アプリを作成します
@@ -60,13 +62,13 @@ __▼ mobile backendとFCMの連携に必要な設定 ▼__<br>https://mbaas.nif
 
 * アプリ設定を開いてプッシュ通知の設定をします
    * 「プッシュ通知の許可」で「許可する」選択、「保存する」をクリックします
-   * 「Androidプッシュ通知」の「APIキー」には、FCMでプロジェクト作成時に発行された「サーバーキー」を記入し、「保存する」をクリックします
+   * 「FCMプッシュ通知」の「FCMプッシュ通知設定ファイルの選択」というボタンをクリックして、 FirebaseからダウンロードしたFirebaseの秘密鍵jsonファイルをアップロードします
 
-<center><img src="readme-img/mBassPushEnv.png" alt="画像6" width="600px"></center>
+<center><img src="readme-img/mBassPushEnv.png" alt="画像6" width="800px"></center>
 
 ### 2. GitHub からサンプルプロジェクトのダウンロード
 
-* プロジェクトの [Github ページ](https://github.com/NIFCloud-mbaas/KotlinPushApp)から「 Clone or download 」＞「 Download ZIP 」をクリックします
+* プロジェクトの [Github ページ](https://github.com/NIFCloud-mbaas/android_push_demo)から「 Clone or download 」＞「 Download ZIP 」をクリックします
 * プロジェクトを解凍します
 
 ### 3. AndroidStudio でアプリを起動
@@ -91,16 +93,13 @@ __▼ mobile backendとFCMの連携に必要な設定 ▼__<br>https://mbaas.nif
 * それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
  * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 
-### 5. AndroidのSender IDキーの設定
+### 5. google-service.jsonの配置
 
-* `MainActivity.kt`を編集します
+* Firebaseから発行したgoogle-service.jsonをアプリに配置します
 
-<center><img src="readme-img/FCMAPIkey.png" alt="画像10" width="600px"></center>
+<center><img src="readme-img/PlaceGoogleServiceFile.png" alt="画像10" width="600px"></center>
 
 <div style="page-break-before:always"></div>
-
-* `ANDROID_SENDER_ID`の部分を、FCMでプロジェクト作成時に発行された「Sender ID」に書き換えます
- * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 
 ### 6. 動作確認
 
