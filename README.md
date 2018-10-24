@@ -16,11 +16,11 @@
 
 ### ニフクラ mobile backend のプッシュ通知機能について
 * Android 端末へプッシュ通知配信を行う際は、Googleが提供している Firebase Cloud Messaging（以下、FCM）と連携することで、通知の配信を行っています
-* Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
-   * Firebaseプロジェクトの作成とAPIキーの取得 ※APIキーの取得については2019年3月以降廃止予定
-   * google-service.json とFirebase秘密鍵の設定
-   * ニフクラ mobile backend での設定
-   * アプリでの設定
+- Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
+    - Firebaseプロジェクトの作成とAPIキーの取得 ※APIキーの取得については2019年3月以降廃止予定
+    - google-service.json とFirebase秘密鍵の設定
+    - ニフクラ mobile backend での設定
+    - アプリでの設定
 * 詳しい設定内容は[プッシュ通知（Android）](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)をご参照ください
 
 ## 動作環境
@@ -44,10 +44,10 @@ FCM対応したプッシュ通知を送信する場合、Firebaseプロジェク
 
 以下のドキュメントを参考に、設定を行ってください。
 
-__▼ Firebaseプロジェクトの作成とAPIキーの取得 ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html
+__▼ Firebaseプロジェクトの作成とAPIキーの取得 ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html<br>
 ※2019年3月までの間は、Firebaseプロジェクトのサーバーキーもmobile backendにて設定していただく必要があります。
 
-__▼ google-service.jsonとFirebase秘密鍵の設定方法について ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html
+__▼ google-service.jsonとFirebase秘密鍵の設定方法について ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html<br>
 ※ [手順5.google-service.jsonの配置](https://github.com/NiFCloud-mbaas/KotlinPushApp#5-google-servicejsonの配置) もご参考ください。
 
 ### 1. ニフクラ mobile backend の準備
