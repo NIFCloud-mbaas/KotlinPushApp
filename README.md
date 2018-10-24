@@ -17,6 +17,7 @@
 ### ニフクラ mobile backend のプッシュ通知機能について
 * Android 端末へプッシュ通知配信を行う際は、Googleが提供している Firebase Cloud Messaging（以下、FCM）と連携することで、通知の配信を行っています
 - Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
+
     - Firebaseプロジェクトの作成とAPIキーの取得 ※APIキーの取得については2019年3月以降廃止予定
     - google-service.json とFirebase秘密鍵の設定
     - ニフクラ mobile backend での設定
