@@ -19,7 +19,7 @@
 - Androidアプリでプッシュ通知を受信するまでの設定は以下のような流れとなっています
 
     - Firebaseプロジェクトの作成とAPIキーの取得 ※APIキーの取得については2019年3月以降廃止予定
-    - google-service.json とFirebase秘密鍵の設定
+    - google-services.json とFirebase秘密鍵の設定
     - ニフクラ mobile backend での設定
     - アプリでの設定
 * 詳しい設定内容は[プッシュ通知（Android）](https://mbaas.nifcloud.com/doc/current/push/basic_usage_android.html)をご参照ください
@@ -41,7 +41,7 @@
 
 FCM対応したプッシュ通知を送信する場合、Firebaseプロジェクトを作成していただいたあと、下記設定を行なっていただく必要があります。
 - APIキーの取得 ※2019年3月以降廃止
-- google-service.jsonをアプリに配置
+- google-services.jsonをアプリに配置
 - Firebaseプロジェクトの秘密鍵をmobile backendにアップロード
 
 以下のドキュメントを参考に、設定を行ってください。
@@ -49,8 +49,8 @@ FCM対応したプッシュ通知を送信する場合、Firebaseプロジェク
 __▼ Firebaseプロジェクトの作成とAPIキーの取得 ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html<br>
 ※2019年3月までの間は、Firebaseプロジェクトのサーバーキーもmobile backendにて設定していただく必要があります。
 
-__▼ google-service.jsonとFirebase秘密鍵の設定方法について ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html<br>
-※ [手順5.google-service.jsonの配置](https://github.com/NiFCloud-mbaas/KotlinPushApp#5-google-servicejsonの配置) もご参考ください。
+__▼ google-services.jsonとFirebase秘密鍵の設定方法について ▼__<br>https://mbaas.nifcloud.com/doc/current/common/push_setup_fcm_json.html<br>
+※ [手順5.google-services.jsonの配置](https://github.com/NiFCloud-mbaas/KotlinPushApp#5-google-servicesjsonの配置) もご参考ください。
 
 ### 1. ニフクラ mobile backend の準備
 * 下記リンクから会員登録（無料）をします
@@ -133,14 +133,14 @@ dependencies {
 * それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
  * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 
-### 5. google-service.jsonの配置
+### 5. google-services.jsonの配置
 
-* Firebaseから発行した google-service.json をアプリに配置します
+* Firebaseから発行した google-services.json をアプリに配置します
     * なお、発行時にAndroidパッケージ名は"com.nifcloud.mbaas.ncmbpushquickstart"としてください
 
   <center><img src="readme-img/AndroidPackageName.PNG" alt="画像10" width="600px"></center>
 
-    * パッケージ名を別名にした場合はアプリ配置後、google-service.jsonファイル内の"package_name"を"mbaas.nifcloud.mbaas.ncmbpushquickstart"としてください
+    * パッケージ名を別名にした場合はアプリ配置後、google-services.jsonファイル内の"package_name"を"mbaas.nifcloud.mbaas.ncmbpushquickstart"としてください
 
 <center><img src="readme-img/PlaceGoogleServiceFile.png" alt="画像10" width="600px"></center>
 
