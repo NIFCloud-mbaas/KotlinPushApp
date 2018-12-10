@@ -82,7 +82,7 @@ __▼ google-services.jsonとFirebase秘密鍵の設定方法について ▼__<
 
 ### 2. サンプルプロジェクトのダウンロード
 * 下記リンクをクリックしてプロジェクトをダウンロードします
- * https://github.com/NiFCloud-mbaas/KotlinPushApp/archive/master.zip
+  * https://github.com/NiFCloud-mbaas/KotlinPushApp/archive/master.zip
 * ダウンロードしたプロジェクトを解凍します
 * AndroidStudio を開きます、「Open an existing Android Studio projct」をクリックして解凍したプロジェクトを選択します
 
@@ -131,7 +131,7 @@ dependencies {
 <center><img src="readme-img/AndroidAPIkey.png" alt="画像9" width="600px"></center>
 
 * それぞれ`YOUR_APPLICATION_KEY`と`YOUR_CLIENT_KEY`の部分を書き換えます
- * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
+  * このとき、ダブルクォーテーション（`"`）を消さないように注意してください！
 
 ### 5. google-services.jsonの配置
 
@@ -149,9 +149,9 @@ dependencies {
 ### 6. 動作確認
 
 * AndroidStudioからビルドします
- * ビルドされたプロジェクト（apkファイル）は `\app\build\outputs\apk` に生成されます
+  * ビルドされたプロジェクト（apkファイル）は `\app\build\outputs\apk` に生成されます
 * インストールしたアプリを起動します
- * プッシュ通知の許可を求めるアラートが出たら、必ず許可してください！
+  * プッシュ通知の許可を求めるアラートが出たら、必ず許可してください！
 
 <center><img src="readme-img/Action1.png" alt="画像11" width="200px"></center>
 
