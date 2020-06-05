@@ -87,7 +87,7 @@ __▼ google-services.jsonとFirebase秘密鍵の設定方法について ▼__<
 * AndroidStudio を開きます、「Open an existing Android Studio projct」をクリックして解凍したプロジェクトを選択します
 
 
-<center><img src="readme-img/SelectProject.png" alt="画像7" width="500px"></center>
+<center><img src="readme-img/android_studio.png" alt="画像7" width="500px"></center>
 
 <div style="page-break-before:always"></div>
 
