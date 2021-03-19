@@ -17,6 +17,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import kotlin.jvm.Throws
 
 private const val TIMEOUT = 150000L
 
@@ -40,6 +41,7 @@ class ExecuteUITest {
     }
 
     @Test
+    @Throws(InterruptedException::class)
     fun clickOnSendNotification() {
         sendPushWithSearchCondition()
         device.openNotification()

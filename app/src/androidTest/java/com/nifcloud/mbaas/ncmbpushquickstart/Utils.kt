@@ -4,6 +4,8 @@ import android.util.Log
 import com.nifcloud.mbaas.core.NCMBInstallation
 import com.nifcloud.mbaas.core.NCMBPush
 import com.nifcloud.mbaas.core.NCMBQuery
+import org.json.JSONArray
+import org.json.JSONException
 
 private const val TAG = "FcmService"
 const val NOTIFICATION_TITLE = "UITest push notification"
@@ -21,6 +23,11 @@ object Utils {
             push.title = NOTIFICATION_TITLE
             push.message = NOTIFICATION_TEXT
             push.richUrl = NOTIFICATION_RICH_URL
+            try {
+                push.target = JSONArray("[android]")
+            } catch (jsonException: JSONException) {
+                jsonException.printStackTrace()
+            }
             push.dialog = true
             push.sendInBackground { e ->
                 if (e != null) {
